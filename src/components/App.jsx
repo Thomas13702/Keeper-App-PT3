@@ -6,8 +6,8 @@ import CreateArea from "./CreateArea";
 
 function App() {
 
-  const [titleItems, setTitleItems] = useState([]);
-  const [contentItems, setContentItems] = useState([]);
+  const [titleItems, setTitleItems] = useState([""]);
+  const [contentItems, setContentItems] = useState([""]);
 
   function addTitle(title){
     setTitleItems(prevItems => {
@@ -20,6 +20,7 @@ function App() {
       return [...prevItems, content]
     });
   }
+
 
 
   return (
