@@ -17,7 +17,7 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form onSubmit={props.submits}>
+      <form onSubmit={(event)=>{event.preventDefault();}}>
         <input name="title" placeholder="Title" onChange={handleTitle} value={title}/>
         <textarea name="content" placeholder="Take a note..." rows="3" onChange={handleContent} value={content}/>
         <button onClick={() => {
