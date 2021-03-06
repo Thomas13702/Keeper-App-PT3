@@ -6,32 +6,28 @@ import CreateArea from "./CreateArea";
 
 function App() {
 
-  const [items, setItems] = useState([
-    {
-      title: "",
-      content:""
-    }
-  ]);
+  const [titleItems, setTitleItems] = useState([]);
+  const [contentItems, setContentItems] = useState([]);
 
-  function addItem(input){
-    setItems(prevItems => {
-      return [...prevItems,
-      {
-      title: input.title,
-      content: input.content
-    }]})
-    console.log(items);
+  function addTitle(title){
+    setTitleItems(prevItems => {
+      return [...prevItems, title]
+    });
   }
 
-  
+  function addContent(content){
+    setContentItems(prevItems => {
+      return [...prevItems, content]
+    });
+  }
 
 
   return (
     <div>
       <Header />
-      <CreateArea onAddTitle={addItem} onAddContent={addItem} submits={addItem}/>
-      {items.map((item, index) => ( 
-      <Note key={index} title="Note title" content="Note content" item={item}/>
+      <CreateArea onAddTitle={addTitle} onAddContent={addContent} />
+      {titleItems.map((titleItem, index) => ( 
+      <Note key={index} title="Note title" content="Note content" title={titleItem} content={contentItems}/>
       ))}
       <Footer />
     </div>
