@@ -5,22 +5,6 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 
 function App() {
-
-  // const [titleItems, setTitleItems] = useState([""]); //make it work with one useState
-  // const [contentItems, setContentItems] = useState([""]);
-
-  // function addTitle(title){
-  //   setTitleItems(prevItems => {
-  //     return [...prevItems, title]
-  //   });
-  // }
-
-  // function addContent(content){
-  //   setContentItems(prevItems => {
-  //     return [...prevItems, content]
-  //   });
-  // }
-
   const [items, setItems] = useState([]);
 
   function addItem(inputText){
