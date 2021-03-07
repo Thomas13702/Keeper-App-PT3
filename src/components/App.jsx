@@ -6,29 +6,35 @@ import CreateArea from "./CreateArea";
 
 function App() {
 
-  const [titleItems, setTitleItems] = useState([""]);
-  const [contentItems, setContentItems] = useState([""]);
+  // const [titleItems, setTitleItems] = useState([""]); //make it work with one useState
+  // const [contentItems, setContentItems] = useState([""]);
 
-  function addTitle(title){
-    setTitleItems(prevItems => {
-      return [...prevItems, title]
-    });
+  // function addTitle(title){
+  //   setTitleItems(prevItems => {
+  //     return [...prevItems, title]
+  //   });
+  // }
+
+  // function addContent(content){
+  //   setContentItems(prevItems => {
+  //     return [...prevItems, content]
+  //   });
+  // }
+
+  const [items, setItems] = useState([]);
+
+  function addItem(inputText){
+    setItems(prevItems => {
+      return[...prevItems, inputText];
+    })
   }
-
-  function addContent(content){
-    setContentItems(prevItems => {
-      return [...prevItems, content]
-    });
-  }
-
-
 
   return (
     <div>
       <Header />
-      <CreateArea onAddTitle={addTitle} onAddContent={addContent} />
-      {titleItems.map((titleItem, index) => ( 
-      <Note key={index} title="Note title" content="Note content" title={titleItem} content={contentItems}/>
+      <CreateArea onAddItem={addItem} />
+      {items.map((item, index) => ( 
+      <Note key={index} title="Note title" content="Note content" items={item}/>
       ))}
       <Footer />
     </div>
